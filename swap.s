@@ -17,7 +17,8 @@ swap:
 	
 	movl (%ecx), %eax #loads x to eax
 	movl %eax, (%edx) #loads x to edx
-	movl (%edx), %eax #loads y to ecx
+	movl (%edx), %eax #loads y to eax
+	movl %eax, (%ecx) #loads y to ecx
 	
 	#movl %ecx, %eax #loads y to ecx
 	#movl %eax, (%ecx) #loads y to ecx
