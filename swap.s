@@ -15,8 +15,9 @@ swap:
 	movl 0x8(%ebp), %ecx  #load x into ecx
 	movl 0xc(%ebp), %edx		#load y into ecx
 	movl %ecx, %eax    #load *x to eax
-	movl %edx, %ecx   #store *y
+	movl (%edx), %ecx   #store *y
 	movl %eax, %edx  #store *x
+	movl (%edx), %edx 
 
 	#movl %ecx, 0x8(%ebp)  #store y
 	#movl %edx, 0x12(%ebp) #store x
