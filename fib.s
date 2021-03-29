@@ -24,7 +24,7 @@ fib:
 	#for loop
 	label1: cmpl $1, %edx
 	jl label2
-	movl $ebx, esi #mov prev to next(add prev)
+	movl 	%ebx, %esi #mov prev to next(add prev)
 	addl 	%ecx, %esi   #adding curr +next
 	addl 	%ebx, %esi  	#adding prev +next
 	movl 	%ecx ,%ebx  	#prev = curr
