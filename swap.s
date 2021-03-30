@@ -1,7 +1,7 @@
-# put your names here
-	.text
+# Lily Korir and Raylon Linvel
+.text
 .globl swap
-	.type	swap, @function
+.type	swap, @function
 swap:
 	pushl	%ebp                # set up swap's stack frame
 	movl	%esp, %ebp
@@ -12,23 +12,16 @@ swap:
 		# You may only use the three caller-saved registers: %eax, %ecx, and %edx.
 		# You also may not store data in any new memory locations.
 
-	movl 0x8(%ebp), %ecx 	 #load *x into ecx
-	movl 0xc(%ebp), %edx	#load *y into ecx
+	movl 0x8(%ebp), %ecx 		 #loads x into ecx
+	movl 0xc(%ebp), %edx		#loads y into ecx
 	
-	movl (%ecx), %eax #loads *x to eax
-	movl (%edx), %ecx #loads *y to ecx
-	movl %eax, (%edx) #changes *y to *x 
-	movl %ecx, %eax 
-	movl 0x8(%ebp), %ecx 	 #load *x into ecx
-	movl %eax, (%ecx) #changes *x to *y 
-	
-	#movl %ecx, %eax #loads y to eax
-	#movl %edx, %ecx #loads *y to ecx
-	#movl %eax, (%ecx) #loads y to ecx
-	#movl (%ecx), %eax #loads x to eax
+	movl (%ecx), %eax 		#loads *x to eax
+	movl (%edx), %ecx 		#loads *y to ecx
+	movl %eax, (%edx) 		#changes *y to *x 
+	movl %ecx, %eax 		#moves y into eax
+	movl 0x8(%ebp), %ecx 	 	#loads x into ecx
+	movl %eax, (%ecx) 		#changes *x to *y 
 	
 	
-	
-
 	leave                     # tear down swap's stack frame and return
 	ret
