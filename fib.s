@@ -1,7 +1,7 @@
-# put your names here
-	.text
+# Lily Korir and Raylon Linvel
+.text
 .globl fib
-	.type	fib, @function
+.type	fib, @function
 fib:
 	pushl	%ebp                 # set up fib's stack frame
 	movl	%esp, %ebp
