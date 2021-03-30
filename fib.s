@@ -16,21 +16,21 @@ fib:
 			# %ebx, %esi, and %edi, but you may not store data in memory.
 			# Remember to put the return value in %eax at the end.
 
-	movl 	0x8(%ebp), %edx    #load n in edx
-	movl 	$0, %ebx  	#store prev in ebx
-	movl 	$1, %ecx			#load curr in ecx
-	movl 	$0, %esi			#load next in esi
+	movl 	0x8(%ebp), %edx 	#load n in edx
+	movl 	$0, %ebx  		#store prev in ebx
+	movl 	$1, %ecx		#load curr in ecx
+	movl 	$0, %esi		#load next in esi
 
 	#for loop
 	label1: cmpl $1, %edx
-	je label2
-	movl 	%ebx, %esi #mov prev to next(add prev)
-	addl 	%ecx, %esi   #adding curr +next
-	movl 	%ecx ,%ebx  	#prev = curr
-	movl 	%esi, %ecx 	 #curr = next
+	je label2			#jump if n == 1
+	movl 	%ebx, %esi 		#mov prev to next(add prev)
+	addl 	%ecx, %esi   		#adding curr +next
+	movl 	%ecx ,%ebx  		#prev = curr
+	movl 	%esi, %ecx 	 	#curr = next
 	subl 	$1, %edx		#n-1
 	jmp 	label1
-	label2: movl 	%ecx, %eax  #moves curr to eax(returns curr)
+	label2: movl	%ecx, %eax  	#moves curr to eax(returns curr)
 
 
 
